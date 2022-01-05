@@ -1,6 +1,16 @@
+import { ReactLocation, Router } from "react-location";
 import "./App.css";
 
-function App() {
+function App({ location }: { location: ReactLocation }) {
+  return (
+    <Router
+      location={location}
+      routes={[{ path: "/", element: <Homepage /> }]}
+    ></Router>
+  );
+}
+
+function Homepage() {
   return (
     <nav className="navbar navbar-light">
       <div className="container">
